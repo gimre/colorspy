@@ -1,0 +1,99 @@
+body {
+    background: linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc) 0 0, linear-gradient(45deg, #ccc 25%, #eee 25%, #eee 75%, #ccc 75%, #ccc) 20px 20px #eee;
+    background-size: 40px 40px;
+}
+
+#image {
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#image.fith {
+    max-width: 100%;
+}
+
+#image.fitv {
+    max-height: 100%;
+}
+
+.color {
+    border: 2px solid #fff;
+    border-radius: 50%;
+    height: 36px;
+    position: relative;
+    -webkit-transform: scale( 0 ) translateZ( 0 );
+    -webkit-transition: all .15s;
+    width: 36px;
+}
+
+.color.active {
+    -webkit-transform: scale( 1 ) translateZ( 0 );
+}
+
+.colorwheel {
+    bottom: 10px;
+    opacity: 0.5;
+    overflow: hidden;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 40px;
+}
+
+.colorwheel:before {
+    content: '';
+    background: url( 'res/colorwheel2.png' ) center center no-repeat;
+    background-size: 100%;
+    display: block;
+    height: 40px;
+    -webkit-transform: translateZ( 0 );
+    -webkit-transition: all .25s;
+    width: 40px;
+}
+
+.colorwheel:hover, .colorwheel.active {
+    opacity: 1;
+}
+
+.colorwheel.enter:before {
+    -webkit-animation: spin-counter-lockwise .25s linear infinite;   
+}
+
+.colorwheel.leave:before {
+    -webkit-animation: spin-clockwise .25s linear infinite;
+}
+
+.interactive {
+    cursor: pointer;
+}
+
+.spy-container {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.stage {
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+@-webkit-keyframes spin-clockwise {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(359deg); }
+}
+
+@-webkit-keyframes spin-counter-lockwise {
+    from { -webkit-transform: rotate(360deg); }
+    to { -webkit-transform: rotate(1deg); }
+}

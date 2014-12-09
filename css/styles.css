@@ -46,7 +46,7 @@ body {
 
 .colorwheel:before {
     content: '';
-    background: url( 'res/colorwheel2.png' ) center center no-repeat;
+    background: url( '../res/colorwheel2.png' ) center center no-repeat;
     background-size: 100%;
     display: block;
     height: 40px;

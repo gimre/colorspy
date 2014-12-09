@@ -2,7 +2,11 @@
     <div class="stage">
         <img data-ng-src="{{ src }}">
     </div>
-    <div class="colorwheel interactive"
-        data-ng-click="extractColors( )">
+    <div class="color-carousel bottom">
+        <div class="color interactive"
+            data-ng-repeat="c in model.colors"
+            data-ng-style="{ 'background-color': '#{{ c[0] }}' }">
+            <span data-ng-bind="c[1] / model.total * 100 | number:1"></span>%
+        </div>
     </div>
 </div>

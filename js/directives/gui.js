@@ -12,9 +12,6 @@
                 templateUrl: 'views/gui.html',
                 scope: {
                     src: '@'
-                },
-                link: function ( $scope, elem ) {
-                    $scope.model.image = elem.find( 'img' )[ 0 ];
                 }
             };
             

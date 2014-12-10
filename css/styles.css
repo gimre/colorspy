@@ -1,16 +1,16 @@
 body {
     background: linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc) 0 0, linear-gradient(45deg, #ccc 25%, #eee 25%, #eee 75%, #ccc 75%, #ccc) 20px 20px #eee;
     background-size: 40px 40px;
-    font-family: Tahoma;
+    font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 #image {
-    bottom: 0;
-    left: 0;
+    bottom: -99999px;
+    left: -99999px;
     margin: auto;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: -99999px;
+    top: -99999px;
 }
 
 #image.fith {
@@ -22,14 +22,31 @@ body {
 }
 
 .color {
+    color: #fff;
     display: inline-block;
-    font-weight: bold;
     height: 40px;
     line-height: 40px;
     margin-right: 20px;
+    position: relative;
     text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     vertical-align: middle;
     width: 80px;
+}
+
+.color:hover {
+    box-shadow: 0 0 5px 1px rgba( 255, 255, 255, 0.7 );
+    font-size: 0;
+}
+
+.color:hover:after {
+    content: attr(data-content-hover);
+    bottom: 0;
+    font-size: initial;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 .color-carousel {
@@ -40,6 +57,11 @@ body {
     padding-left: 20px;
     position: absolute;
     right: 0;
+    white-space: nowrap;
+}
+
+.color-carousel.overflow-start {
+    background: -webkit-radial-gradient( left center, ellipse cover, rgba( 0,0,0,0.65 ) 0%, rgba( 0,0,0,0 ) 100% );
 }
 
 .color-carousel.bottom {

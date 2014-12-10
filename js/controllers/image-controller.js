@@ -13,6 +13,8 @@
 
             $scope.model = {
                 colors: [ ],
+                sliceStart: 0,
+                sliceEnd: 20,
                 total: 0,
                 image: $element.find( 'img' )[ 0 ]
             };
@@ -27,13 +29,17 @@
                             return t + colors[ c ] | 0;
                         }, 0 );
 
-                        console.log( $scope.model.total );
-
                         $scope.model.colors = sorted
-                            .slice( 0, 10 )
                             .map( function ( c ) { return [ c, colors[ c ] | 0 ] } );
                     } );
                 }
+            };
+
+            $scope.getSlice = function ( ) {
+                return $scope.model.colors.slice(
+                    $scope.model.sliceStart,
+                    $scope.model.sliceEnd
+                );
             };
 
             $scope.model.image.addEventListener( 'load', $scope.extractColors );

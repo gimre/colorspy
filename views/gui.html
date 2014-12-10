@@ -1,12 +1,15 @@
 <div id="spy-container">
     <div class="stage">
-        <img data-ng-src="{{ src }}">
+        <img id="image" data-ng-src="{{ src }}">
     </div>
     <div class="color-carousel bottom">
-        <div class="color interactive"
-            data-ng-repeat="c in model.colors"
-            data-ng-style="{ 'background-color': '#{{ c[0] }}' }">
-            <span data-ng-bind="c[1] / model.total * 100 | number:1"></span>%
+        <div class="viewport">
+            <div class="color interactive"
+                data-ng-repeat="c in getSlice( )"
+                data-ng-bind="c[1] / model.total | percent:1:true"
+                data-content-hover="#{{ c[0] }}"
+                data-ng-style="{ 'background-color': '#{{ c[0] }}' }">
+            </div>
         </div>
     </div>
 </div>
